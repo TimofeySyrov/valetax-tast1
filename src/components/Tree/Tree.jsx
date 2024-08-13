@@ -10,7 +10,6 @@ const Tree = ({ tree }) => {
     return (
       <Node
         key={node.id}
-        parentNodeId={node.id}
         node={node}
         childrenNodes={children}
         isRootNode={node.id === rootNode}

@@ -8,21 +8,23 @@ export const RENAME_NODE_EVENT_NAME = "RENAME_NODE_EVENT";
 
 const RenameNode = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [nodeId, setNodeId] = useState("");
+  const [node, setNode] = useState(null);
   const [newName, setNewName] = useState("");
 
   const handleModalClose = () => setIsOpen(false);
   const handleModalTrigger = (details) => {
-    const id = details.detail?.nodeId;
+    const node = details.detail?.node;
+    const isNode = node?.id && node?.name;
 
-    if (!id) throw new Error("Node ID not received");
+    if (!isNode) throw new Error("Node ID not received");
     setIsOpen(true);
-    setNodeId(id);
+    setNode(node);
+    setNewName(node.name);
   };
   const handleRename = () => {
     if (!newName) return;
 
-    renameNode(nodeId, newName).finally(() => {
+    renameNode(node.id, newName).finally(() => {
       handleModalClose();
       location.reload();
     });
@@ -39,6 +41,7 @@ const RenameNode = () => {
         <Input
           required
           placeholder="New name"
+          value={newName}
           onChange={(e) => setNewName(e.target.value)}
         />
         <Box>

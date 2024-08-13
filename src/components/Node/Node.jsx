@@ -28,7 +28,10 @@ const Node = ({ isRootNode, node, childrenNodes }) => {
 
       case "rename":
         triggerCustomEvent(RENAME_NODE_EVENT_NAME, {
-          nodeId: node.id,
+          node: {
+            id: node.id,
+            name: node.name,
+          },
         });
         break;
 
