@@ -1,0 +1,33 @@
+.node {
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.node:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.name {
+  margin-left: 6px;
+}
+
+.expanded .chevron {
+  transform: rotate(90deg);
+}
+
+.actionBtns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 5px;
+  opacity: 0;
+}
+
+.node:hover .actionBtns {
+  opacity: 1;
+}
+
+.children {
+  margin-left: 34px;
+}
