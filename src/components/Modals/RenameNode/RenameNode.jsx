@@ -16,7 +16,7 @@ const RenameNode = () => {
     const node = details.detail?.node;
     const isNode = node?.id && node?.name;
 
-    if (!isNode) throw new Error("Node ID not received");
+    if (!isNode) throw new Error("Node not received");
     setIsOpen(true);
     setNode(node);
     setNewName(node.name);
