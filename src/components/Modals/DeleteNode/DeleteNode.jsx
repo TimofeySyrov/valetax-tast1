@@ -32,15 +32,15 @@ const DeleteNode = () => {
 
   return (
     <Modal open={isOpen} onClose={handleModalClose}>
-      <Box className={s.baseModal}>
+      <form className={s.baseModal} onSubmit={handleDelete}>
         <Typography variant="h6" component="h2">
           Delete
         </Typography>
         <Box>
           <Button onClick={handleModalClose}>Cancel</Button>
-          <Button onClick={handleDelete}>Delete</Button>
+          <Button type="submit">Delete</Button>
         </Box>
-      </Box>
+      </form>
     </Modal>
   );
 };

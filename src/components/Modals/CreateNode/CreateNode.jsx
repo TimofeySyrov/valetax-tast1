@@ -31,7 +31,7 @@ const CreateNode = () => {
 
   return (
     <Modal open={isOpen} onClose={handleModalClose}>
-      <Box className={s.baseModal}>
+      <form className={s.baseModal} onSubmit={handleCreate}>
         <Typography variant="h6" component="h2">
           Add
         </Typography>
@@ -42,9 +42,9 @@ const CreateNode = () => {
         />
         <Box>
           <Button onClick={handleModalClose}>Cancel</Button>
-          <Button onClick={handleCreate}>Add</Button>
+          <Button type="submit">Add</Button>
         </Box>
-      </Box>
+      </form>
     </Modal>
   );
 };

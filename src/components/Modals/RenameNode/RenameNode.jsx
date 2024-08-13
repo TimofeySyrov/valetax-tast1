@@ -32,7 +32,7 @@ const RenameNode = () => {
 
   return (
     <Modal open={isOpen} onClose={handleModalClose}>
-      <Box className={s.baseModal}>
+      <form className={s.baseModal} onSubmit={handleRename}>
         <Typography variant="h6" component="h2">
           Rename
         </Typography>
@@ -43,9 +43,9 @@ const RenameNode = () => {
         />
         <Box>
           <Button onClick={handleModalClose}>Cancel</Button>
-          <Button onClick={handleRename}>Rename</Button>
+          <Button type="submit">Rename</Button>
         </Box>
-      </Box>
+      </form>
     </Modal>
   );
 };
